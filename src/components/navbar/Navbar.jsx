@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import UserSlider from "./UserSlider";
+import UserSlider from "../userSlider/UserSlider";
 import styles from "./Navbar.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/userSlice";
