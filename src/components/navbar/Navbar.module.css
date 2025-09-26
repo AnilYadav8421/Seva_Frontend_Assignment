@@ -1,0 +1,49 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 17px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navLinks {
+    display: flex;
+    gap: 7rem;
+}
+
+.navLinks a {
+    color: black;
+    text-decoration: none;
+}
+
+.userSlider {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    color: #000;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width:auto;
+}
+
+.userSlider h4 {
+    margin-bottom: 10px;
+}
+
+.userSlider ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.userSlider button {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
