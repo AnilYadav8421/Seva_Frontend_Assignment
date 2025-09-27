@@ -1,8 +1,11 @@
 import React from 'react'
+import LandingPage from './LandingPage/LandingPage'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <LandingPage/>
+    </div>
   )
 }
 

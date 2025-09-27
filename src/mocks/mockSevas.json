@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "Ganesh Puja",
+        "Price": 500,
+        "image": "https://png.pngtree.com/png-clipart/20250515/original/pngtree-detailed-illustration-of-lord-ganesha-hindu-deity-png-image_20977759.png"
+    },
+    {
+        "id": 2,
+        "title": "Lakshmi Homam",
+        "Price": 1200,
+        "image": "https://www.shutterstock.com/image-illustration/indian-god-dhan-laxmi-hindu-600w-2320574547.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Hanuman Aarti",
+        "Price": 500,
+        "image": "https://media.istockphoto.com/id/1309482136/photo/browse-high-resolution-stock-images-of-lord-hanuman.jpg?s=612x612&w=0&k=20&c=iOptbImj1TnXwPTaK995py8YL0WBMpBEdgRngiIsQT4="
+    },
+    {
+        "id": 4,
+        "title": "Krishna Aarti ",
+        "Price": 500,
+        "image": "https://png.pngtree.com/png-vector/20240426/ourmid/pngtree-lord-krishna-colourul-vector-image-png-image_12314201.png"
+    },
+    {
+        "id": 5,
+        "title": "Mahadev Puja",
+        "Price": 500,
+        "image": "https://cdn.pixabay.com/photo/2016/01/27/23/25/shiva-the-hindu-god-1165593_1280.png"
+    },
+    {
+        "id": 6,
+        "title": "Ganesh Puja",
+        "Price": 500,
+        "image": "https://png.pngtree.com/png-clipart/20250515/original/pngtree-detailed-illustration-of-lord-ganesha-hindu-deity-png-image_20977759.png"
+    },
+    {
+        "id": 7,
+        "title": "Lakshmi Homam",
+        "Price": 1200,
+        "image": "https://www.shutterstock.com/image-illustration/indian-god-dhan-laxmi-hindu-600w-2320574547.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Hanuman Aarti",
+        "Price": 500,
+        "image": "https://media.istockphoto.com/id/1309482136/photo/browse-high-resolution-stock-images-of-lord-hanuman.jpg?s=612x612&w=0&k=20&c=iOptbImj1TnXwPTaK995py8YL0WBMpBEdgRngiIsQT4="
+    },
+    {
+        "id": 9,
+        "title": "Mahadev Puja",
+        "Price": 500,
+        "image": "https://cdn.pixabay.com/photo/2016/01/27/23/25/shiva-the-hindu-god-1165593_1280.png"
+    },
+    {
+        "id": 10,
+        "title": "Krishna Aarti ",
+        "Price": 500,
+        "image": "https://png.pngtree.com/png-vector/20240426/ourmid/pngtree-lord-krishna-colourul-vector-image-png-image_12314201.png"
+    },
+    {
+        "id": 11,
+        "title": "Ganesh Puja",
+        "Price": 500,
+        "image": "https://png.pngtree.com/png-clipart/20250515/original/pngtree-detailed-illustration-of-lord-ganesha-hindu-deity-png-image_20977759.png"
+    },
+    {
+        "id": 11,
+        "title": "Krishna Aarti ",
+        "Price": 500,
+        "image": "https://png.pngtree.com/png-vector/20240426/ourmid/pngtree-lord-krishna-colourul-vector-image-png-image_12314201.png"
+    }
+]

@@ -1,0 +1,26 @@
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.viewMore {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d23519;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.viewMore:hover {
+    background-color: #aa2e0c;
+}
