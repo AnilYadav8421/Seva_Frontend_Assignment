@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+}
+
+.left, .right {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+}
+
+.payButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #d23519;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.payButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
-import Cart from './pages/Cart'
+import Cart from './pages/cart/Cart'
 import Home from './pages/Home'
-import Checkout from './pages/Checkout'
+import Checkout from './pages/checkout/Checkout'
 
 const App = () => {
   return (

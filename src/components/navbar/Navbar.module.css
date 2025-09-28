@@ -5,15 +5,46 @@
     padding: 17px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
 }
 
 .navLinks {
     display: flex;
-    gap: 7rem;
+    align-items: center;
+    gap: 2rem;
+    /* smaller gap for better responsiveness */
 }
 
 .navLinks a {
     color: black;
     text-decoration: none;
+    font-weight: 500;
 }
 
+.navLinks a:hover {
+    text-decoration: underline;
+}
+
+.userSection {
+    position: relative;
+}
+
+.userBtn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.badge {
+    background: red;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    margin-left: 6px;
+}
