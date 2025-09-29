@@ -6,7 +6,6 @@ export default function SevaCard({ seva }) {
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.cartItems || []);
 
-    // Check if this seva is already in cart
     const inCart = cartItems.some((item) => item.id === seva.id);
 
     const handleCartToggle = () => {
@@ -17,7 +16,7 @@ export default function SevaCard({ seva }) {
         }
     };
 
-    const { title, Price, image, description } = seva; // use image
+    const { title, Price, image, description } = seva; 
 
     return (
         <div className={styles.card}>

@@ -4,7 +4,6 @@ import FormInput from "../../components/formInput/FormInput.jsx";
 import { login } from "../../store/userSlice";
 import styles from "./Checkout.module.css";
 
-// ✅ Mock pincode database
 const Pincodes = {
   "560001": { city: "Bangalore", state: "Karnataka" },
   "110001": { city: "New Delhi", state: "Delhi" },
@@ -15,7 +14,6 @@ export default function Checkout() {
   const cartItems = useSelector((state) => state.cart.cartItems || []);
   const dispatch = useDispatch();
 
-  // User details & flow states
   const [userDetails, setUserDetails] = useState({ name: "", number: "", email: "" });
   const [isExistingUser, setIsExistingUser] = useState(null);
   const [otp, setOtp] = useState("");
@@ -23,36 +21,31 @@ export default function Checkout() {
   const [isVerified, setIsVerified] = useState(false);
   const [error, setError] = useState("");
 
-  // Address state
   const [address, setAddress] = useState({ type: "Home", addrLine1: "", addrLine2: "", pincode: "", city: "", state: "" });
   const [pincodeError, setPincodeError] = useState("");
 
-  // Payment modal & details
   const [showPayment, setShowPayment] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState("card"); // card | upi
+  const [paymentMethod, setPaymentMethod] = useState("card");
   const [cardDetails, setCardDetails] = useState({ number: "", expiry: "", cvv: "" });
   const [upiId, setUpiId] = useState("");
 
-  // Handlers
   const handleUserChange = (e) => setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
 
   const handleAddressChange = (e) => {
     const { name, value } = e.target;
     setAddress({ ...address, [name]: value });
 
-    // Autofill city/state
     if (name === "pincode" && value.length === 6) {
       if (Pincodes[value]) {
         setAddress((prev) => ({ ...prev, city: Pincodes[value].city, state: Pincodes[value].state }));
         setPincodeError("");
       } else {
         setAddress((prev) => ({ ...prev, city: "", state: "" }));
-        setPincodeError("❌ Invalid Pincode");
+        setPincodeError("Invalid Pincode");
       }
     }
   };
 
-  // User OTP flow
   const checkUserExistence = () => {
     const mobileRegex = /^[6-9]\d{9}$/;
     if (!mobileRegex.test(userDetails.number)) { setError("Mobile number must be 10 digits starting with 6-9"); return; }
@@ -69,25 +62,22 @@ export default function Checkout() {
       setIsVerified(true); setError("");
       dispatch(login({
         user: { name: userDetails.name || "Existing User", email: userDetails.email || "user@example.com", number: userDetails.number },
-        orders: ["Order-XXXXX1", "Order-XXXXX2"],
+        orders: ["Order-XXXXX1", "Order-XXXXX2", "Order-XXXXX3"],
       }));
-    } else { setError("❌ Invalid OTP"); }
+    } else { setError("Invalid OTP"); }
   };
 
-  // Pay button enabled only if OTP verified + address valid
   const isFormValid = isVerified && address.addrLine1 && address.pincode && address.city && address.state && !pincodeError;
 
-  // Payment submission
   const handlePayment = () => {
     if (paymentMethod === "card" && (!cardDetails.number || !cardDetails.expiry || !cardDetails.cvv)) { alert("Complete Card details"); return; }
     if (paymentMethod === "upi" && !upiId) { alert("Enter UPI ID"); return; }
-    alert("✅ Payment Successful!");
+    alert("Payment Successful!");
     setShowPayment(false);
   };
 
   return (
     <div className={styles.container}>
-      {/* Left: Cart items */}
       <div className={styles.left}>
         <h2>Selected Items</h2>
         {cartItems.length === 0 ? <p>Your cart is empty.</p> :
@@ -96,7 +86,6 @@ export default function Checkout() {
           </ul>}
       </div>
 
-      {/* Right: User & Address */}
       <div className={styles.right}>
         <h2>User Details</h2>
         <FormInput label="Mobile Number" name="number" value={userDetails.number} onChange={handleUserChange} placeholder="10-digit number" />
@@ -111,7 +100,7 @@ export default function Checkout() {
           <FormInput label="Email" name="email" value={userDetails.email} onChange={handleUserChange} />
           {!otpSent ? <button onClick={sendOtp}>Send OTP</button> :
             <>
-              <FormInput label="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)} />
+              <FormInput label="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)} placeholder={"type = 1234"}/>
               <button onClick={verifyOtp}>Verify OTP</button>
             </>}
         </>}
@@ -122,14 +111,13 @@ export default function Checkout() {
         <h2>Address Details</h2>
         <FormInput label="Address Line 1" name="addrLine1" value={address.addrLine1} onChange={handleAddressChange} />
         <FormInput label="Address Line 2" name="addrLine2" value={address.addrLine2} onChange={handleAddressChange} />
-        <FormInput label="Pincode" name="pincode" value={address.pincode} onChange={handleAddressChange} />
+        <FormInput label="Pincode" name="pincode" value={address.pincode} onChange={handleAddressChange} placeholder={"type = 560001, 110001, 400001"} />
         <FormInput label="City" name="city" value={address.city} readOnly />
         <FormInput label="State" name="state" value={address.state} readOnly />
 
         <button className={styles.payButton} disabled={!isFormValid || cartItems.length === 0} onClick={() => setShowPayment(true)}>Pay Now</button>
       </div>
 
-      {/* Payment Modal */}
       {showPayment && (
         <div className={styles.paymentModal}>
           <div className={styles.paymentContent}>

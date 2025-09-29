@@ -14,11 +14,11 @@ export default function Cart() {
   };
 
   const handleCheckout = () => {
-    navigate("/checkout"); // navigate to Checkout page
+    navigate("/checkout");
   };
 
   const totalAmount = cartItems.reduce(
-    (sum, item) => sum + item.discountedPrice,
+    (sum, item) => sum + item.Price,
     0
   );
 
@@ -35,18 +35,25 @@ export default function Cart() {
                 <img src={item.image} alt={item.title} className={styles.image} />
                 <div className={styles.info}>
                   <h2>{item.title}</h2>
-                  <p>₹{item.Price}</p>
-                  <button onClick={() => handleRemove(item.id)}>Remove</button>
+                  <p className={styles.price}>₹{item.Price}</p>
+                  <button
+                    className={styles.removeButton}
+                    onClick={() => handleRemove(item.id)}> Remove
+                  </button>
                 </div>
               </li>
             ))}
           </ul>
-          <h2>Total: ₹{totalAmount}</h2>
 
-          {/* ✅ Proceed to Checkout Button */}
-          <button className={styles.checkoutButton} onClick={handleCheckout}>
-            Proceed to Checkout
-          </button>
+          <div className={styles.summary}>
+            <h2>Total: ₹{totalAmount}</h2>
+            <button
+              className={styles.checkoutButton}
+              onClick={handleCheckout}
+            >
+              Proceed to Checkout
+            </button>
+          </div>
         </>
       )}
     </div>

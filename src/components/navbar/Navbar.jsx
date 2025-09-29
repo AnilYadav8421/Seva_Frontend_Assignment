@@ -11,33 +11,26 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const { user, orders, isLoggedIn } = useSelector((state) => state.user);
-    // const { items } = useSelector((state) => state.cart);
 
     const handleLogout = () => {
         dispatch(logout());
         setShowSlider(false);
-        navigate("/"); // redirect to home after logout
+        navigate("/");
     };
 
     return (
         <nav className={styles.navbar}>
             <div className={styles.navLinks}>
-                {/* Home */}
                 <Link to="/">Home</Link>
-
-                {/* Cart with item count */}
                 <Link to="/cart"> Cart </Link>
 
-                {/* User */}
                 <div className={styles.userSection}>
                     {isLoggedIn ? (
                         <>
                             <button
                                 onClick={() => setShowSlider(!showSlider)}
                                 aria-expanded={showSlider}
-                                className={styles.userBtn}
-                            >
-                                User
+                                className={styles.userBtn}> User
                             </button>
                             {showSlider && (
                                 <UserSlider
@@ -47,9 +40,7 @@ const Navbar = () => {
                                 />
                             )}
                         </>
-                    ) : (
-                        <Link to="/login">User</Link> // if not logged in, goes to login page
-                    )}
+                    ) : (<Link to="/login">User</Link>)}
                 </div>
             </div>
         </nav>

@@ -4,12 +4,10 @@ import styles from "./Payment.module.css";
 export default function Payment({ totalAmount }) {
     const [paymentMethod, setPaymentMethod] = useState("card"); // 'card' | 'upi'
 
-    // Card fields
     const [cardNumber, setCardNumber] = useState("");
     const [expiry, setExpiry] = useState("");
     const [cvv, setCvv] = useState("");
 
-    // UPI fields
     const [upiId, setUpiId] = useState("");
 
     const [successMessage, setSuccessMessage] = useState("");
@@ -29,15 +27,15 @@ export default function Payment({ totalAmount }) {
 
         if (paymentMethod === "card") {
             if (isCardValid) {
-                setSuccessMessage(`✅ Paid ₹${totalAmount} via Card successfully!`);
+                setSuccessMessage(`Paid ₹${totalAmount} via Card successfully!`);
             } else {
-                setErrorMessage("❌ Invalid card details");
+                setErrorMessage("Invalid card details");
             }
         } else if (paymentMethod === "upi") {
             if (isUpiValid) {
-                setSuccessMessage(`✅ Paid ₹${totalAmount} via UPI successfully!`);
+                setSuccessMessage(`Paid ₹${totalAmount} via UPI successfully!`);
             } else {
-                setErrorMessage("❌ Invalid UPI ID");
+                setErrorMessage("Invalid UPI ID");
             }
         }
     };
@@ -61,7 +59,6 @@ export default function Payment({ totalAmount }) {
             </div>
 
             <div className={styles.columns}>
-                {/* Card Payment */}
                 {paymentMethod === "card" && (
                     <div className={styles.left}>
                         <label>Card Number</label>
@@ -93,7 +90,6 @@ export default function Payment({ totalAmount }) {
                     </div>
                 )}
 
-                {/* UPI Payment */}
                 {paymentMethod === "upi" && (
                     <div className={styles.right}>
                         <label>UPI ID</label>
