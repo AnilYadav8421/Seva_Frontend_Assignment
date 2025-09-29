@@ -29,7 +29,7 @@ I built this web application using **React.js** and **Redux** that allows users 
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
